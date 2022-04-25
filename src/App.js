@@ -1,49 +1,27 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-
-const NavBar = () => (
-  <div className="navbar">
-    <h3>Task Manager</h3>
-    <Link to="/">Current Tasks</Link>
-    <Link to="/completed">Completed Tasks</Link>
-  </div>
-);
-
-const Template = (props) => (
-  <div>
-    <NavBar />
-    <p className="page-info">
-      {props.title}:
-    </p>
-    <ul className={props.status}>
-      <li>Task 1</li>
-      <li>Task 2</li>
-      <li>Task 3</li>
-    </ul>
-  </div>
-);
-
-const CurrentTasks = () => (
-  <Template title="Current Tasks" status="Current" />
-);
-
-const CompletedTasks = () => (
-  <Template title="Completed Tasks" status="Completed" />
-);
 
 class App extends Component {
   render() {
     return (
       <div>
-        Test
+        <form>
+          <div className="form-group">
+            <label >Email address</label>
+            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div className="form-group">
+            <label >Password</label>
+            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <div className="form-group form-check">
+            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+            <label className="form-check-label" >Check me out</label>
+          </div>
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
       </div>
-      // <Router>
-      //   <div>
-      //     <Route exact path="/" component={CurrentTasks} />
-      //     <Route path="/completed" component={CompletedTasks} />
-      //   </div>
-      // </Router>
     );
   }
 }
